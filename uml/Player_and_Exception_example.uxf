@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?><diagram program="umlet" version="13.3">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>40</x>
+      <y>40</y>
+      <w>540</w>
+      <h>430</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;singelton&gt;&gt;
+se.itu.game.cave::Player
+--
+_-instance : Player_
+-inventory : List [0..*]
+-currentRoom : Room
+--
+-Player(room : Room)
++takeThing(thing : Thing) : void
++dropThing(thing : Thing) : void
++inventory() : Thing [0..*]
+_+getInstance() : Player_
++currentRoom() : Room
++go(direction : Room.Direction) : void {exceptions=IllegalMoveException}
++toString() : String</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>720</x>
+      <y>250</y>
+      <w>330</w>
+      <h>220</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;exception&gt;&gt;
+se.itu.game.cave::IllegalMoveException
+--
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>790</x>
+      <y>30</y>
+      <w>180</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>java.lang:Exception</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>870</x>
+      <y>160</y>
+      <w>30</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>570</x>
+      <y>430</y>
+      <w>170</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;
+&lt;&lt;throws&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;20.0;150.0;20.0</additional_attributes>
+  </element>
+</diagram>
