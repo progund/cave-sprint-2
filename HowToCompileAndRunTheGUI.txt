@@ -1,0 +1,36 @@
+In order to compile and run the GUI, place
+yourself in the directory above se/
+
+In this directory you should have (at least) the following:
+
+cavedatabas.db          <- the database
+sqlite-jdbc-3.16.1.jar  <- the JDBC driver
+se/                     <- the directory for all the Java files
+
+Issue the following in order to compile and run the GUI:
+
+javac se/itu/game/main/MainGui.java && java -Ddodebug=true -cp sqlite-jdbc-3.16.1.jar:. se.itu.game.main.MainGui
+
+If you are running Windows, the class path becomes slightly different:
+javac se/itu/game/main/MainGui.java && java -Ddodebug=true -cp "sqlite-jdbc-3.16.1.jar;." se.itu.game.main.MainGui
+
+The flag to java above:
+
+-Ddodebug=true
+
+makes the GUI log messages to the standard out using the method
+debug(Object);
+
+If you run it without the -Ddodebug=true flag, it will stop debug printing.
+
+Since Sprint 2 is changing the design of Player and Room, we need to fix these
+changes in the GUI as well.
+
+More information will come as for how to change the Player and Room classes,
+as well as the adding of ThingRule for implementing rules for picking up.
+
+One effect that the changes will have, is that certain operations on the
+Player now will throw exceptions if they fail. This, of course, needs to be
+reflected in the GUI code.
+
+Good luck!
