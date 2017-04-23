@@ -127,10 +127,8 @@ se.itu.game.cave::RuleViloationException
 --
 _-rules: Map&lt;Thing, ThingRule&gt;_
 --
-
---
-_+addRulthing(Thing, e(rule : ThingRule) : void_
-_+getRuleFor(thing : THing) : ThingRule_
+_+addThingRule(thing : Thing, rule : ThingRule) : void_
+_+getRuleFor(thing : Thing) : ThingRule_
 
 </panel_attributes>
     <additional_attributes/>
