@@ -22,6 +22,9 @@ _-instance : Player_
 _+getInstance() : Player_
 +currentRoom() : Room
 +go(direction : Room.Direction) : void {exceptions=IllegalMoveException}
++describeCurrentRoom() : String
++thingsInCurrentRoom() : Thing [*]
++canSeeDoorIn(direction : Room.Direction) : boolean
 +toString() : String</panel_attributes>
     <additional_attributes/>
   </element>
