@@ -41,7 +41,7 @@ in the javadoc for the method.
 
 When Player compiles, reflect this change in the GUI. You need to add try-catch(IllegalMoveException e) in the places where you call "player.go(direction)".
 
-Bash```
+bash```
 $ grep -n 'go(' se/itu/game/gui/MainFrame.java
 188:            player.go(dir);
 ```
