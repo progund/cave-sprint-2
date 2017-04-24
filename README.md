@@ -21,7 +21,7 @@ When the Player compiles, implement these changes in the GUI. What places? The p
 where before, you used Player.getInstance().currentRoom() .
 
 These are the places to look for:
-Bash```
+```
 $ grep -n 'currentRoom()' se/itu/game/gui/MainFrame.java
 118:    Room currentRoom = player.currentRoom();
 140:    for (Thing thing : player.currentRoom().things()) {
