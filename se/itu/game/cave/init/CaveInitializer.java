@@ -268,11 +268,11 @@ public class CaveInitializer {
                     ()->
                     {
                       List<Thing> inventory = Player.getInstance().inventory();
-                      if(!inventory.contains(Things.get("Gold")) &&
-                         !inventory.contains(Things.get("Jewelry")) &&
-                         !inventory.contains(Things.get("Diamonds")) &&
-                         !inventory.contains(Things.get("Silver")) ) {
-                        throw new RuleViolationException("You cannot take the bird right now");
+                      if(!inventory.contains(Things.get("Glass Key")) ||
+                         !inventory.contains(Things.get("Rusty Key")) ||
+                         !inventory.contains(Things.get("Brass Key")) ||
+                         !inventory.contains(Things.get("Skeleton Key")) ) {
+                        throw new RuleViolationException("You cannot pick up and unlock the pirate chest now");
                       } else {
                         return true;
                       }
