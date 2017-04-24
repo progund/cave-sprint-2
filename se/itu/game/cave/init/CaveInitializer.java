@@ -269,7 +269,7 @@ public class CaveInitializer {
                     {
                       List<Thing> inventory = Player.getInstance().inventory();
                       if(!inventory.contains(Things.get("Gold")) &&
-                         !inventory.contains(Things.get("Jewels")) &&
+                         !inventory.contains(Things.get("Jewelry")) &&
                          !inventory.contains(Things.get("Diamonds")) &&
                          !inventory.contains(Things.get("Silver")) ) {
                         throw new RuleViolationException("You cannot take the bird right now");
