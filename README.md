@@ -35,8 +35,8 @@ Implement the classes ```se.itu.game.cave.IllegalMoveException``` and ```game.it
 It's pretty straight forward - Let them extend Exception and add a constructor accepting a String message and in the constructor body,
 simply call ```super(message);``` . See the lecture slides for the code examples.
 
-## Change the Player's instance method takeThing(Thing thing)
-Now, change the Player's instance method takeThing(Thing thing) so that it throws IllegalMoveException in its declaration. Also reflect this
+## Change the Player's instance method go(Room.Direction direction)
+Now, change the Player's instance method go(Room.Direction) so that it throws IllegalMoveException in its declaration. Also reflect this
 in the javadoc for the method.
 
 When Player compiles, reflect this change in the GUI. You need to add try-catch(IllegalMoveException e) in the places where you call "player.go(direction)".
