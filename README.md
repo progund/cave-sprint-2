@@ -74,4 +74,18 @@ Next, change the Player's instance method ```takeThing(Thing)``` so that it uses
 
 In the if-block, do as before. See the lecture slides for hints.
 
+## Verify that the ThingRuleTest passes
+Use the ./build.sh script (if you are running bash) to build the whole project. Then use the ./run_tests.sh script to run the tests.
+
+I you don't run bash (in Mac OS or Cygwin), you can look inside the scripts and do the same manually.
+## Reflect the changes to takeThing in the GUI code
+You should now change the GUI so that it uses try-catch to notice rule violations. Where to check? (note that line numbers have probably changed now that you've added stuff, but originally it was this):
+```
+$ grep -n 'takeThing(' se/itu/game/gui/MainFrame.java
+230:          Player.getInstance().takeThing(thing);
+```
+
+I you don't run bash (in Mac OS or Cygwin), you can look inside the scripts and do the same manually.
+## Verify that the GUI works with the rules check and everything.
+Run the gui (how to is included in the script ./run_gui.sh ) and verify that everything works.
 To be continued and/or updated. Stay tuned!
