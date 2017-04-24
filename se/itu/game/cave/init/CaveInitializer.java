@@ -1,6 +1,9 @@
 package se.itu.game.cave.init;
 
+import se.itu.game.cave.Player;
 import se.itu.game.cave.Room;
+import se.itu.game.cave.RuleBook;
+import se.itu.game.cave.RuleViolationException;
 import se.itu.game.cave.Thing;
 
 import java.sql.ResultSet;
@@ -161,6 +164,7 @@ public class CaveInitializer {
       System.err.println("Couldn't set up cave: " + sqle.getMessage());
     }
     buildCave(rooms);
+    addRules();
   }
   
   /*
@@ -235,6 +239,45 @@ public class CaveInitializer {
         thisRoom.setConnectingRoom(Room.Direction.WEST, westRoom);
       }    
     }
+  }
+
+  private void addRules() {
+    RuleBook
+      .addThingRule(Things
+                    .get("Bird"),
+                    ()->
+                    {
+                      if(Player
+                         .getInstance()
+                         .inventory()
+                         .contains(Things.get("Rod"))) {
+                        throw new RuleViolationException("The bird gets scared and you can't take it");
+                      }
+                      if(!Player
+                         .getInstance()
+                         .inventory()
+                         .contains(Things.get("Cage"))) {
+                        throw new RuleViolationException("You cannot take the bird right now");
+                      } else {
+                        return true;
+                      }
+                    });
+    RuleBook
+      .addThingRule(Things
+                    .get("Pirate Chest"),
+                    ()->
+                    {
+                      List<Thing> inventory = Player.getInstance().inventory();
+                      if(!inventory.contains(Things.get("Gold")) &&
+                         !inventory.contains(Things.get("Jewels")) &&
+                         !inventory.contains(Things.get("Diamonds")) &&
+                         !inventory.contains(Things.get("Silver")) ) {
+                        throw new RuleViolationException("You cannot take the bird right now");
+                      } else {
+                        return true;
+                      }
+                    });
+    
   }
   
 }
