@@ -74,6 +74,7 @@ Next, change the Player's instance method ```takeThing(Thing)``` so that it uses
 
 In the if-block, do as before. See the lecture slides for hints.
 
+Don't forget that according to the new design, takeThing(...) should now declare that it throws RuleViolationException, to force the GUI code to try-catch it.
 ## Verify that the ThingRuleTest passes
 Use the ./build.sh script (if you are running bash) to build the whole project. Then use the ./run_tests.sh script to run the tests.
 
