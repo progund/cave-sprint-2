@@ -91,34 +91,34 @@ public class ThingRuleTest {
      * Pick up chest with gold, silver, diamonds and jewels
      * verify that you could.
      */
-    Thing diamonds = Things.get("Diamonds");
-    assert diamonds != null : "No diamonds";
-    Thing gold = Things.get("Gold");
-    assert gold != null : "No gold";
-    Thing silver = Things.get("Silver");
-    assert silver != null : "No silver";
-    Thing jewels = Things.get("Jewelry");
-    assert diamonds != null : "No jewels";
+    Thing glassKey = Things.get("Glass Key");
+    assert glassKey != null : "No Glass Key";
+    Thing rustyKey = Things.get("Rusty Key");
+    assert rustyKey != null : "No RustyKey";
+    Thing brassKey = Things.get("Brass Key");
+    assert brassKey != null : "No Brass Key";
+    Thing skeletonKey = Things.get("Skeleton Key");
+    assert skeletonKey != null : "No Skeleton Key";
     Thing chest = Things.get("Pirate Chest");
     assert chest != null : "No pirate chest";
     Player player = Player.getInstance();
     try {
-      player.currentRoom().putThing(diamonds);
-      player.currentRoom().putThing(gold);
-      player.currentRoom().putThing(silver);
-      player.currentRoom().putThing(jewels);
+      player.currentRoom().putThing(glassKey);
+      player.currentRoom().putThing(rustyKey);
+      player.currentRoom().putThing(brassKey);
+      player.currentRoom().putThing(skeletonKey);
       player.currentRoom().putThing(chest);
       player.takeThing(chest);
-      assert false : "Could take chest without goods";
+      assert false : "Could take chest without keys";
     } catch (RuleViolationException expected) {}
     try {
-      player.takeThing(diamonds);
-      player.takeThing(gold);
-      player.takeThing(silver);
-      player.takeThing(jewels);
+      player.takeThing(glassKey);
+      player.takeThing(rustyKey);
+      player.takeThing(brassKey);
+      player.takeThing(skeletonKey);
       player.takeThing(chest);
     } catch (RuleViolationException e) {
-      assert false : "Couldn't pick up chest with all the goods";      
+      assert false : "Couldn't pick up chest with all the keys";      
     }
   }
   
@@ -133,7 +133,7 @@ public class ThingRuleTest {
     System.out.println("Test case TR2 - Try to pick up key with rule for cage");
     test.testT2();
     System.out.println("TR2 OK\n");
-    System.out.println("\nTest case TR3 - Try to pick up the chest with and without the gold etc");
+    System.out.println("\nTest case TR3 - Try to pick up the chest with and without the keys");
     test.testT3();
     System.out.println("OK");
   }    
