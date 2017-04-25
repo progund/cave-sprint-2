@@ -45,7 +45,7 @@ public class ThingRuleTest {
     } catch (RuleViolationException e) {
       assert false : "Player couldn't take the key!";
     }
-    assert(!player.currentRoom().things().contains(key)) : "Could wrongly find Skeleton key in east room ";
+    assert(!player.currentRoom().things().contains(key)) : "Skeleton key was still in east room even after picking it up";
     assert(player.inventory().contains(key)) : "Could not find Skeleton key in player's inventory ";
   }
 
