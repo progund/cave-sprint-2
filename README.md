@@ -90,3 +90,8 @@ I you don't run bash (in Mac OS or Cygwin), you can look inside the scripts and 
 ## Verify that the GUI works with the rules check and everything.
 Run the gui (how to is included in the script ./run_gui.sh ) and verify that everything works.
 To be continued and/or updated. Stay tuned!
+
+# Important notice regarding the run_tests.sh and build.sh files
+If you run build.sh or run_tests.sh after changing the Player, the old tests won't compile.
+
+Please carefully read the error messages from javac and fix also the test files to use the new methods of the Player class. Specifically the messages which throw exceptions (or new kinds of exceptions) like go(direction) and takeThing(thing).
