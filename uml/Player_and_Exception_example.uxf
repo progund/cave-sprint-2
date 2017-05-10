@@ -12,7 +12,7 @@
 se.itu.game.cave::Player
 --
 _-instance : Player_
--inventory : List [0..*]
+-inventory : Thing [0..*]
 -currentRoom : Room
 --
 -Player(room : Room)
